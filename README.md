@@ -70,12 +70,12 @@ For the `uri` value use string provided from one of the below codes for accurate
 collect(\Route::getRoutes())->map(function ($route) { return $route->uri(); }); // Listing all registered route URI.
 ```
 
-In the database, the permission name will be stored as `route>>api/user/>>*` (if the second parameter isn't provided it will be stored as a wildcard `*`) or `route>>api/user/{parameter}/>>POST` (all route parameters will be converted to `parameter` or you can change the behaviour from `config/permission.php`)
+In the database, the permission name will be stored as `route>>api/user>>*` (if the second parameter isn't provided it will be stored as a wildcard `*`) or `route>>api/user/{parameter}>>POST` (all route parameters will be converted to `parameter` or you can change the behaviour from `config/permission.php`)
 
 You can access it with default `spatie/laravel-permission` utility like:
 
 ```php
-$user->can('route>>api/user/{parameter}/>>POST');
+$user->can('route>>api/user/{parameter}>>POST');
 ```
 
 Or using provided helper function to generate formatted permission name.
